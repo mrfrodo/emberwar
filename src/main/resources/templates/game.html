@@ -1,0 +1,27 @@
+<script>
+async function loadWorld() {
+    const resp = await fetch('/api/game/start', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            "width": 10,
+            "height": 5,
+            "tiles": [
+                "..........",
+                "...###....",
+                "...#.#....",
+                "...###....",
+                ".........."
+            ],
+            "units": [
+                { "symbol": "@", "x": 4, "y": 2 }
+            ]
+        })
+    });
+
+    const world = await resp.json();
+    console.log(world); // you can later render the hex map here
+}
+
+window.onload = loadWorld;
+</script>

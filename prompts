@@ -1,0 +1,6 @@
+Create a game: EMBERWAR
+Start with creating a simple game world.
+The game world/engine: For now just print out a simple rectangle in a web browser
+Use spring boot, use thymeleaf
+Use hexagonal architecture and ports and adapers
+Structure it in 2 main packages: Domain and infrastructure

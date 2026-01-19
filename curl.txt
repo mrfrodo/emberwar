@@ -1,0 +1,3 @@
+curl -X POST -H "Content-Type: application/json" \
+     -d @src/main/resources/gameworld.json \
+     http://localhost:8080/api/game/start
