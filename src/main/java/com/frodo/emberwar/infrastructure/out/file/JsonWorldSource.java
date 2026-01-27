@@ -1,4 +1,4 @@
-package com.frodo.emberwar.infrastructure.world;
+package com.frodo.emberwar.infrastructure.out.file;
 
 import com.frodo.emberwar.domain.spi.WorldSource;
 import java.io.ByteArrayInputStream;
@@ -11,8 +11,9 @@ public class JsonWorldSource implements WorldSource {
 
     private final String source;
 
-    public JsonWorldSource(String source) {
-        this.source = source;
+    // Constructor to ignore anything else and always use the default JSON file
+    public JsonWorldSource() {
+        this.source = "gameworld.json"; // this file must be in src/main/resources
     }
 
     @Override

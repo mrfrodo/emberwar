@@ -1,15 +1,13 @@
-package com.frodo.emberwar.infrastructure.json;
+package com.frodo.emberwar.infrastructure.out.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.frodo.emberwar.domain.*;
 import com.frodo.emberwar.domain.spi.WorldLoaderPort;
 import com.frodo.emberwar.domain.spi.WorldLoadingException;
-import com.frodo.emberwar.domain.spi.WorldSource;
-import com.frodo.emberwar.infrastructure.world.JsonWorldSource;
+import com.frodo.emberwar.infrastructure.out.file.GameWorldDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +26,14 @@ public class JsonWorldLoader implements WorldLoaderPort {
     }
 
     @Override
-    public GameWorld loadWorld(WorldSource source) {
-        try (InputStream is = source.open()) {
-            // Read JSON from the port (any implementation of WorldSource)
+    public GameWorld loadWorld() {
+        // Ignore the provided source and always load the internal file
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream("gameworld.json")) {
+            if (is == null) {
+                throw new WorldLoadingException("Resource gameworld.json not found in classpath");
+            }
+
+            // Read JSON from the resource
             GameWorldDto dto = mapper.readValue(is, GameWorldDto.class);
 
             Map2D map = parseMap(dto);

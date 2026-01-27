@@ -20,15 +20,15 @@ public class StartGameUseCaseImpl implements StartGameUseCasePort {
     }
 
     @Override
-    public GameWorld start(String sourceId) {
+    public GameWorld start() {
         // Use the factory to create a domain-agnostic WorldSource
         // “Agnostic” literally means “doesn’t know about / is independent of”.
-        WorldSource worldSource = worldSourceFactory.createFrom(sourceId);
+        WorldSource worldSource = worldSourceFactory.createFrom();
 
         try {
-            return worldLoader.loadWorld(worldSource);
+            return worldLoader.loadWorld();
         } catch (Exception e) {
-            throw new RuntimeException("Failed to start game with world: " + sourceId, e);
+            throw new RuntimeException("Failed to start game world");
         }
     }
 }

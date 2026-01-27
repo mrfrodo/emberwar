@@ -1,27 +1,28 @@
-<script>
-async function loadWorld() {
-    const resp = await fetch('/api/game/start', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            "width": 10,
-            "height": 5,
-            "tiles": [
-                "..........",
-                "...###....",
-                "...#.#....",
-                "...###....",
-                ".........."
-            ],
-            "units": [
-                { "symbol": "@", "x": 4, "y": 2 }
-            ]
-        })
-    });
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Emberwar</title>
+    <!-- Link to your CSS in /static/css -->
+    <link rel="stylesheet" th:href="@{/css/mapStyle.css}">
+</head>
+<body>
+<h1>Emberwar</h1>
 
-    const world = await resp.json();
-    console.log(world); // you can later render the hex map here
-}
+<div id="game-world">
+    <table>
+        <tbody>
+        <!-- Loop over rows of tiles -->
+        <tr th:each="row : ${world.map.tiles}">
+            <!-- Loop over individual tiles -->
+            <td th:each="tile : ${row}"
+                th:class="'tile ' + ${tile.type.name().toLowerCase()}"
+                th:title="${tile.type}">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-window.onload = loadWorld;
-</script>
+</body>
+</html>

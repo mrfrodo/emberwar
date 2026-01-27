@@ -1,4 +1,4 @@
-package com.frodo.emberwar.infrastructure.json;
+package com.frodo.emberwar.infrastructure.out.file;
 
 import java.util.List;
 
