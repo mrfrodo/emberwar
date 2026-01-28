@@ -13,7 +13,6 @@ public class StartGameUseCaseImpl implements StartGameUseCasePort {
     private final WorldLoaderPort worldLoader;
     private final WorldSourceFactory worldSourceFactory;
 
-
     public StartGameUseCaseImpl(WorldLoaderPort worldLoader, WorldSourceFactory worldSourceFactory) {
         this.worldLoader = worldLoader;
         this.worldSourceFactory = worldSourceFactory;

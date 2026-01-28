@@ -20,4 +20,9 @@ public class Tile {
     public void setUnit(Unit unit) {
         this.unit = unit;
     }
+
+    /** Convenience method for terrain rules */
+    public boolean isForest() {
+        return type == TileType.FOREST;
+    }
 }
