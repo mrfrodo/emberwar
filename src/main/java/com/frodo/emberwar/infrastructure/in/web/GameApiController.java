@@ -1,7 +1,7 @@
 package com.frodo.emberwar.infrastructure.in.web;
 
 import com.frodo.emberwar.domain.GameWorld;
-import com.frodo.emberwar.domain.api.StartGameUseCasePort;
+import com.frodo.emberwar.application.api.StartGameUseCasePort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

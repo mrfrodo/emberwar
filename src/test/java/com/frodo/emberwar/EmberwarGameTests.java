@@ -2,8 +2,8 @@ package com.frodo.emberwar;
 
 import com.frodo.emberwar.domain.GameWorld;
 import com.frodo.emberwar.domain.Position;
-import com.frodo.emberwar.domain.spi.WorldLoaderPort;
-import com.frodo.emberwar.domain.spi.WorldSource;
+import com.frodo.emberwar.application.spi.WorldLoaderPort;
+import com.frodo.emberwar.application.spi.WorldSource;
 import com.frodo.emberwar.infrastructure.out.file.JsonWorldLoader;
 import com.frodo.emberwar.infrastructure.out.file.JsonWorldSource;
 import org.junit.jupiter.api.Test;

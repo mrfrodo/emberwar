@@ -2,9 +2,8 @@ package com.frodo.emberwar.infrastructure.out.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.frodo.emberwar.domain.*;
-import com.frodo.emberwar.domain.spi.WorldLoaderPort;
-import com.frodo.emberwar.domain.spi.WorldLoadingException;
-import com.frodo.emberwar.infrastructure.out.file.GameWorldDto;
+import com.frodo.emberwar.application.spi.WorldLoaderPort;
+import com.frodo.emberwar.application.spi.WorldLoadingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

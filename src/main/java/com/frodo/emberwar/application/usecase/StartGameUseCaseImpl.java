@@ -1,10 +1,10 @@
-package com.frodo.emberwar.domain.service;
+package com.frodo.emberwar.application.usecase;
 
 import com.frodo.emberwar.domain.GameWorld;
-import com.frodo.emberwar.domain.api.StartGameUseCasePort;
-import com.frodo.emberwar.domain.spi.WorldLoaderPort;
-import com.frodo.emberwar.domain.spi.WorldSource;
-import com.frodo.emberwar.domain.spi.WorldSourceFactory;
+import com.frodo.emberwar.application.api.StartGameUseCasePort;
+import com.frodo.emberwar.application.spi.WorldLoaderPort;
+import com.frodo.emberwar.application.spi.WorldSource;
+import com.frodo.emberwar.application.spi.WorldSourceFactory;
 import org.springframework.stereotype.Service;
 
 @Service

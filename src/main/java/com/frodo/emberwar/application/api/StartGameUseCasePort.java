@@ -1,4 +1,4 @@
-package com.frodo.emberwar.domain.api;
+package com.frodo.emberwar.application.api;
 
 import com.frodo.emberwar.domain.GameWorld;
 

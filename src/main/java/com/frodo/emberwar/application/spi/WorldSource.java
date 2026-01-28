@@ -1,4 +1,4 @@
-package com.frodo.emberwar.domain.spi;
+package com.frodo.emberwar.application.spi;
 
 import java.io.IOException;
 import java.io.InputStream;
